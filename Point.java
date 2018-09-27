@@ -1,30 +1,30 @@
 package uF4.trabajos.A1_17_09_2018._02;
 
 public class Point {
-	private int x, y;
+	private float x, y;
 	
 	//CONSTRUCTOR
-	public Point(int x, int y) {
+	public Point(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
 
 	//GETTERS
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 
 	
 	//SETTERS
-	public void setX(int x) {
+	public void setX(float x) {
 		this.x = x;
 	}
 
-	public void setY(int y) {
+	public void setY(float y) {
 		this.y = y;
 	}
 	

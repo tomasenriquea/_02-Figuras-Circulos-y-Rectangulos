@@ -1,15 +1,160 @@
 package uF4.trabajos.A1_17_09_2018._02;
 
-//import java.util.Scanner;
+import java.util.Scanner;
 
 
 
 public class Main {
-
+	
+	// Esto es para mostrar el menú de opciones.
+	public static int menu() {
+		
+		System.out.println("\n\n\n");
+		System.out.println("||||||||||||||||||||||||||||||||||||||||||||||");
+		System.out.println("||||||||||||||||||||FIGURAS|||||||||||||||||||");
+		System.out.println();
+		System.out.println("1. Crear un circulo.\n" + 
+						   "2. Crear un rectangulo.\n" + 
+						   "0. Salir.");
+			
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		System.out.print("\nIngrese un numero: ");
+		int dato = sc.nextInt();
+		
+		return dato;
+	}
+	
+	
 	public static void main(String[] args) {
 		
-		Color color = new Color(100f, 150f, 200f);  // Color definido
-		Point point = new Point(23, 45);  // Coordenada establecida de una posicion
+		int respuesta;
+		@SuppressWarnings("resource")  // Sirve para poder eliminar las advertencias.
+		Scanner sc = new Scanner(System.in); 
+		
+		do {
+			respuesta = menu();
+			
+			switch(respuesta){
+			
+			case 1:
+				Circle circulo = new Circle();  // Creo un circulo
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\nIngrese la combinación de color para el circulo.");
+				System.out.print("Rojo: ");
+				float red = sc.nextFloat();
+				
+				System.out.print("Verde: ");
+				float green = sc.nextFloat();
+				
+				System.out.print("Blue: ");
+				float blue = sc.nextFloat();
+				
+				Color color = new Color(red, green, blue);  // Combinación de colores principales para un color.
+				circulo.setColor(color);  // Se le asigna un color
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\nIngrese la ubicación de la figura.");
+				System.out.print("Coordenada X: ");
+				float x = sc.nextFloat();
+				
+				System.out.print("Coordenada Y: ");
+				float y = sc.nextFloat();
+				
+				Point point = new Point(x, y);  // Coordenada establecida de una posicion.
+				circulo.setOrigen(point);  // Se le asigna una posicion
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.print("\nIngrese el radio del circulo: ");
+				double radio = sc.nextDouble();
+				circulo.setRadius(radio);  // se agina el radio del circulo
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\n\n#######################################################");
+				System.out.println("\nEl circulo a crear tiene los siguientes detalles:\n");
+				
+				System.out.println("Perimetro: " + circulo.perimetro() + // se muestra el calculo del perimetro
+						   		   "\nArea: " + circulo.area());  // se muestra el calculo del area
+				
+				System.out.println("\nCombinacion de color");
+				circulo.detalleColor();  //Aqui los detalles del color y de la posicion.
+				
+				System.out.println("\nUbicacion del circulo");
+				circulo.detalleCoordenada(); //Aqui los detalles de la posicion.
+				
+				System.out.println("\nCirculo creado!!!\n");
+				System.out.println("#######################################################\n\n");
+				break;
+				
+			case 2:
+				Rectangle rectangulo = new Rectangle();  // Crea un rectangulo.
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\nIngrese la combinación de color para el rectangulo.");
+				System.out.print("Rojo: ");
+				float red1 = sc.nextFloat();
+				
+				System.out.print("Verde: ");
+				float green1 = sc.nextFloat();
+				
+				System.out.print("Blue: ");
+				float blue1 = sc.nextFloat();
+				
+				Color color1 = new Color(red1, green1, blue1);  // Combinación de colores principales para un color.
+				rectangulo.setColor(color1);  // Se le asigna un color
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\nIngrese la ubicación de la figura.");
+				System.out.print("Coordenada X: ");
+				float x1 = sc.nextFloat();
+				
+				System.out.print("Coordenada Y: ");
+				float y1 = sc.nextFloat();
+				
+				Point point1 = new Point(x1, y1);  // Coordenada establecida de una posicion.
+				rectangulo.setOrigen(point1);  // Se le asigna una posicion
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\nIngrese el alto y ancho del rectangulo.");
+				
+				System.out.print("Alto: ");
+				double alto = sc.nextDouble();
+			
+				System.out.print("Ancho: ");
+				double Ancho = sc.nextDouble();
+				
+				rectangulo.setHW(alto, Ancho);  // Se asigna el valor del alto y ancho.
+				
+				//----------------------------------------------------------------------------------------------
+				System.out.println("\n\n#######################################################");
+				System.out.println("\nEl rectangulo a crear tiene los siguientes detalles:\n");
+				
+				System.out.println("Perimetro: " + rectangulo.perimetro() + // se muestra el calculo del perimetro
+						   		   "\nArea: " + rectangulo.area());  // se muestra el calculo del area
+				
+				System.out.println("\nCombinacion de color");
+				rectangulo.detalleColor();  //Aqui los detalles del color y de la posicion.
+				
+				System.out.println("\nUbicacion del rectangulo");
+				rectangulo.detalleCoordenada(); //Aqui los detalles de la posicion.
+				
+				System.out.println("\nRectangulo creado!!!\n");
+				System.out.println("#######################################################\n\n");
+				break;
+			}
+	
+		}while(respuesta != 0);
+		
+		
+		
+		
+		
+		
+		
+		/*
+		Color color = new Color(100f, 150f, 200f);  // Combinación de colores principales para un color.
+		Point point = new Point(23.3f, 45.4f);  // Coordenada establecida de una posicion
 		
 		
 		System.out.println("CIRCULO");
@@ -46,37 +191,8 @@ public class Main {
 		
 		System.out.println("\nUbicacion del circulo");
 		rectangulo.detalleCoordenada();  //Aqui los detalles de la posicion.
+		*/
 		
-		
-		
-		
-		
-		/*
-		System.out.println("Constructor por defecto");
-		Shape f1 = new Shape();
-		System.out.println(f1.getColor());
-		System.out.println(f1.getOrigen());
-		
-		
-		System.out.println("------------------------------------");
-		
-		Point org = new Point(2,4);  //Se llama a la clase Point de una libreria
-		
-		System.out.println("Constructor con un solo parametro de typo clase");
-		Shape f2 = new Shape(org);
-		System.out.println(f2.getOrigen());
-		f2.detalleCoordenada();
-		
-		
-		System.out.println("------------------------------------");
-		
-		Color col = new Color(100, 150, 200);  // Se llama a la clase Color de una libreria.
-		
-		System.out.println("Constructor con dos parametros de typo clase");
-		Shape f3 = new Shape(col, org);  // Aqui recibira 'org' de f1 y 'col' de la nueva clase creada.
-		System.out.println(f3.getOrigen() + "\n" + f3.getColor());
-		f3.detalleColorCoordenada();
-		*/	
 	}
 }
 
