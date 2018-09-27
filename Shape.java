@@ -1,7 +1,5 @@
 package uF4.trabajos.A1_17_09_2018._02;
 
-import java.awt.Color;
-import java.awt.Point;
 
 public class Shape {  // Forma o figura
 	
@@ -43,27 +41,30 @@ public class Shape {  // Forma o figura
 		this.origen = origen;
 	}
 	
+	
+	//METODOS DE CALCULOS
+	public double area() {
+		return 0;
+	}
+	
+	
+	public double perimetro() {
+		return 0;
+	}
+	
+	
 
 	
 	//DETALLES 
 	public void detalleCoordenada() {
-		System.out.println("Origen X: " + origen.getX() + 
-						   "\nOrigen Y: " + origen.getY());
+		System.out.println("Posicion X: " + origen.getX() + 
+						   "\nPosicion Y: " + origen.getY());
 	} 
-	
-	
+		
 
-	public void detalleColorCoordenada() {
+	public void detalleColor() {
 		System.out.println("Rojo: " + color.getRed() + 
 						   "\nVerde: " + color.getGreen() + 
-						   "\nAzul: " + color.getBlue() +
-						   "\nOrigen X: " + origen.getX() + 
-						   "\nOrigen Y: " + origen.getY());
+						   "\nAzul: " + color.getBlue());
 	}
-
-	
-	
-
-	
-	
 }  
